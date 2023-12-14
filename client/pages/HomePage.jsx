@@ -1,6 +1,4 @@
-
-
-
+import '../styling/HomePage.css'
 
 export default function HomePage(){
 
