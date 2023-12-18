@@ -1,0 +1,75 @@
+:root {
+  --lightgrn: rgb(83, 83, 83);
+  text-align: center;
+}
+
+body,
+html {
+  font-family: 'Tilt Neon', sans-serif;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  margin: 0;
+}
+
+.hide {
+  display: none;
+}
+
+.hide-score {
+  visibility: hidden;
+}
+
+nav {
+  display: flex;
+}
+
+#cards-container {
+  place-content: center;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+  margin-top: 40px;
+  flex-wrap: wrap;
+}
+
+#card {
+  font-family: 'Tilt Neon', sans-serif;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border: 3px solid black;
+  border-radius: 10px;
+
+}
+
+#img {
+  width: calc(100% - 40px);
+  height: 258px;
+  border-radius: 10px;
+  object-fit: contain;
+  margin: 20px;
+}
+
+#modeName {
+  color: white;
+  padding-bottom: 15px;
+  font-weight: bold;
+}
+
+#btn {
+  padding: 5px;
+  border: white solid 2px;
+  border-radius: 5px;
+  text-decoration: none;
+  color: black;
+  background-color: white;
+}
+
+#href {
+  text-decoration: none;
+  color: black;
+}

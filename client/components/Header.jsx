@@ -10,10 +10,13 @@ export default function Header() {
   return (
     <Navbar expand="lg" className="bg-body-tertiary">
       <Container>
-        <Navbar.Brand href="/">My Web Site</Navbar.Brand>
+        <Navbar.Brand href="/">St. Paul Ragnarok Stats</Navbar.Brand>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="me-auto">
+            <Nav.Link href="/hardpoint">Hardpoint</Nav.Link>
+            <Nav.Link href="/search">Search & Destroy</Nav.Link>
+            <Nav.Link href="/control">Control</Nav.Link>
             
             { user?._id !== undefined && (
               <Nav.Link href="/private">Private Page</Nav.Link>
