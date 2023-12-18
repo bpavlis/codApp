@@ -2,11 +2,14 @@ import '../styling/HomePage.css'
 import hardpointImage from '../assets/hardpoint.webp'
 import searchImage from '../assets/search.webp'
 import controlImage from '../assets/control.webp'
-import { Card, Button, Table } from 'react-bootstrap';
+import { Card, Button, Table, Form } from 'react-bootstrap';
 
 
 
 export default function HomePage() {
+  const handleInputChange = ({ target: { name, value } }) => {
+    setUserData({ ...userData, [name]: value });
+  }
 
   return (
     <>
@@ -34,53 +37,70 @@ export default function HomePage() {
           </Card.Body>
         </Card>
       </div>
+
+      <h1 className='title'>Enter Stats:</h1>
+      <form className='inputContainer'>
+        <Form.Select className='inputBox' aria-label="Default select example">
+          <option>Select a player:</option>
+          <option value="Da_Bears5422">Da_Bears5422</option>
+          <option value="HoneyB">HoneyB</option>
+          <option value="Jimmy">Jimmy</option>
+          <option value="SD">SD</option>
+        </Form.Select>
+        <input className='inputBox' type="text" name="kills" placeholder="Enter kills" onChange={handleInputChange} />
+        <input className='inputBox' type="text" name="deaths" placeholder="Enter deaths" onChange={handleInputChange} />
+        <input className='inputBox' type="text" name="time" placeholder="Enter time (HP only)" onChange={handleInputChange} />
+        <input className='inputBox' type="text" name="plants" placeholder="Enter plants (SND only)" onChange={handleInputChange} />
+        <Button id="btnStats" href="/">Submit</Button>
+      </form>
+
       <h1 className="title">Overall Stats:</h1>
-        <Table responsive="sm">
-          <thead>
-            <tr>
-              <th>Username</th>
-              <th>Avg Kills</th>
-              <th>Avg Deaths</th>
-              <th>K/D</th>
-              <th>Avg Time</th>
-              <th>Avg Plants</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td>Da_Bears5422</td>
-              <td>#</td>
-              <td>#</td>
-              <td>#</td>
-              <td>#</td>
-              <td>#</td>
-            </tr>
-            <tr>
-              <td>HoneyB</td>
-              <td>#</td>
-              <td>#</td>
-              <td>#</td>
-              <td>#</td>
-              <td>#</td>
-            </tr>
-            <tr>
-              <td>Jimmy</td>
-              <td>#</td>
-              <td>#</td>
-              <td>#</td>
-              <td>#</td>
-              <td>#</td>
-            </tr>
-            <tr>
-              <td>SD</td>
-              <td>#</td>
-              <td>#</td>
-              <td>#</td>
-              <td>#</td>
-              <td>#</td>
-            </tr>
-          </tbody>
-        </Table>
+      <Table responsive="sm">
+        <thead>
+          <tr>
+            <th>Username</th>
+            <th>Avg Kills</th>
+            <th>Avg Deaths</th>
+            <th>K/D</th>
+            <th>Avg Time</th>
+            <th>Avg Plants</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Da_Bears5422</td>
+            <td>#</td>
+            <td>#</td>
+            <td>#</td>
+            <td>#</td>
+            <td>#</td>
+          </tr>
+          <tr>
+            <td>HoneyB</td>
+            <td>#</td>
+            <td>#</td>
+            <td>#</td>
+            <td>#</td>
+            <td>#</td>
+          </tr>
+          <tr>
+            <td>Jimmy</td>
+            <td>#</td>
+            <td>#</td>
+            <td>#</td>
+            <td>#</td>
+            <td>#</td>
+          </tr>
+          <tr>
+            <td>SD</td>
+            <td>#</td>
+            <td>#</td>
+            <td>#</td>
+            <td>#</td>
+            <td>#</td>
+          </tr>
+        </tbody>
+      </Table>
     </>
   )
 }
