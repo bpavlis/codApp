@@ -13,18 +13,6 @@ html {
   margin: 0;
 }
 
-.hide {
-  display: none;
-}
-
-.hide-score {
-  visibility: hidden;
-}
-
-nav {
-  display: flex;
-}
-
 #cards-container {
   place-content: center;
   display: flex;
@@ -73,3 +61,18 @@ nav {
   text-decoration: none;
   color: black;
 }
+
+.title {
+  margin: 0 auto;
+  margin-top: 40px;
+  padding-bottom: 20px;
+  text-align: center;
+  color: white;
+}
+
+.table{
+  border-left: white solid 1px;
+  border-top: white solid 1px;
+  border-right: white solid 1px;
+}
+
