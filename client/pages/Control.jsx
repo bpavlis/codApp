@@ -1,5 +1,8 @@
 import '../styling/Mode.css'
-import { Table } from 'react-bootstrap';
+import { Table, Card } from 'react-bootstrap';
+import invasionCNT from '../assets/invasionCNT.png'
+import highriseCNT from '../assets/highriseCNT.png'
+import karachiCNT from '../assets/karachiCNT.png'
 
 export default function Control() {
 
@@ -123,6 +126,12 @@ export default function Control() {
             </tr>
           </tbody>
         </Table>
+      </div>
+      <h1 className='title'>Control Sites:</h1>
+      <div id="cards-container">
+        <Card.Img id="img2" variant="top" src={invasionCNT} />
+        <Card.Img id="img2" variant="top" src={karachiCNT} />
+        <Card.Img id="img2" variant="top" src={highriseCNT} />
       </div>
     </>
   )

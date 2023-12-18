@@ -1,5 +1,10 @@
 import '../styling/Mode.css'
-import { Table } from 'react-bootstrap';
+import { Table, Card } from 'react-bootstrap';
+import invasionHP from '../assets/invasionHP.png'
+import karachiHP from '../assets/karachiHP.png'
+import skidrowHP from '../assets/skidrowHP.png'
+import subBaseHP from '../assets/subBaseHP.png'
+import terminalHP from '../assets/terminalHP.png'
 
 export default function Hardpoint() {
 
@@ -225,6 +230,14 @@ export default function Hardpoint() {
             </tr>
           </tbody>
         </Table>
+      </div>
+      <h1 className='title'>Rotations:</h1>
+      <div id="cards-container">
+        <Card.Img id="img2" variant="top" src={invasionHP} />
+        <Card.Img id="img2" variant="top" src={karachiHP} />
+        <Card.Img id="img2" variant="top" src={skidrowHP} />
+        <Card.Img id="img2" variant="top" src={subBaseHP} />
+        <Card.Img id="img2" variant="top" src={terminalHP} />
       </div>
     </>
   )

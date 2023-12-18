@@ -1,5 +1,10 @@
 import '../styling/Mode.css'
-import { Table } from 'react-bootstrap';
+import { Table, Card } from 'react-bootstrap';
+import invasionSND from '../assets/invasionSND.png'
+import karachiSND from '../assets/karachiSND.png'
+import skidrowSND from '../assets/skidrowSND.png'
+import highriseSND from '../assets/highriseSND.png'
+import terminalSND from '../assets/terminalSND.png'
 
 export default function Search() {
 
@@ -225,6 +230,14 @@ export default function Search() {
             </tr>
           </tbody>
         </Table>
+      </div>
+      <h1 className='title'>Bomb Sites:</h1>
+      <div id="cards-container">
+        <Card.Img id="img2" variant="top" src={invasionSND} />
+        <Card.Img id="img2" variant="top" src={karachiSND} />
+        <Card.Img id="img2" variant="top" src={skidrowSND} />
+        <Card.Img id="img2" variant="top" src={highriseSND} />
+        <Card.Img id="img2" variant="top" src={terminalSND} />
       </div>
     </>
   )
