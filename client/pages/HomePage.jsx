@@ -41,6 +41,22 @@ export default function HomePage() {
       <h1 className='title'>Enter Stats:</h1>
       <form className='inputContainer'>
         <Form.Select className='inputBox' aria-label="Default select example">
+          <option>Select a mode:</option>
+          <option value="Hardpoint">Hardpoint</option>
+          <option value="Search&Destroy">Search & Destroy</option>
+          <option value="Control">Control</option>
+        </Form.Select>
+        <Form.Select className='inputBox' aria-label="Default select example">
+          <option>Select a map:</option>
+          <option value="Invasion">Invasion</option>
+          <option value="Karachi">Karachi</option>
+          <option value="Skidrow">Skidrow</option>
+          <option value="SubBase">Sub Base</option>
+          <option value="Terminal">Terminal</option>
+          <option value="Highrise">Highrise</option>
+
+        </Form.Select>
+        <Form.Select className='inputBox' aria-label="Default select example">
           <option>Select a player:</option>
           <option value="Da_Bears5422">Da_Bears5422</option>
           <option value="HoneyB">HoneyB</option>
