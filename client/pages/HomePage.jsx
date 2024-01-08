@@ -3,6 +3,7 @@ import hardpointImage from '../assets/hardpoint.webp'
 import searchImage from '../assets/search.webp'
 import controlImage from '../assets/control.webp'
 import { Card, Button, Table, Form } from 'react-bootstrap';
+import StatForm from './StatForm';
 
 
 
@@ -38,7 +39,7 @@ export default function HomePage() {
         </Card>
       </div>
 
-      <h1 className='title'>Enter Stats:</h1>
+      {/* <h1 className='title'>Enter Stats:</h1>
       <form className='inputContainer'>
         <Form.Select className='inputBox' aria-label="Default select example">
           <option>Select a mode:</option>
@@ -68,7 +69,7 @@ export default function HomePage() {
         <input className='inputBox' type="text" name="time" placeholder="Enter time (HP only)" onChange={handleInputChange} />
         <input className='inputBox' type="text" name="plants" placeholder="Enter plants (SND only)" onChange={handleInputChange} />
         <Button id="btnStats" href="/">Submit</Button>
-      </form>
+      </form> */}
 
       <h1 className="title">Overall Stats:</h1>
       <Table responsive="sm">
@@ -117,6 +118,7 @@ export default function HomePage() {
           </tr>
         </tbody>
       </Table>
+      <StatForm />
     </>
   )
 }
