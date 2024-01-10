@@ -7,34 +7,42 @@ const playerSchema = new mongoose.Schema({
   },
   kills: Number,
   deaths: Number,
-  timeInPoint: { type: Number, default: 0 }, // Only for Hardpoint mode
-  numOfPlants: { type: Number, default: 0 } // Only for Search and Destroy mode
+  // For Hardpoint mode
+  timeInPoint: { type: Number, default: 0 },
+  // For Search and Destroy mode
+  numOfPlants: { type: Number, default: 0 }
+  // You can add other properties for different game modes here
 });
 
 const gameSchema = new mongoose.Schema({
   players: [playerSchema]
 });
 
-gameSchema.pre('save', function (next) {
+gameSchema.pre('save', async function (next) {
   const game = this;
-  // Check if the gameId exists, if not, generate a new one
   if (!game.gameId) {
-    mongoose.model('Game').countDocuments({}, function (err, count) {
-      if (err) {
-        return next(err);
-      }
-      // Increment count to get the next gameId
+    try {
+      const MapModel = mongoose.model('Map'); // Retrieve the model associated with gameSchema
+      const count = await MapModel.countDocuments({});
       game.gameId = count + 1;
       next();
-    });
+    } catch (err) {
+      next(err);
+    }
   } else {
-    // If gameId exists, move to the next middleware
     next();
   }
 });
 
 const mapSchema = new mongoose.Schema({
-  mapName: String,
+  mapName: {
+    type: String,
+    enum: ['Invasion', 'Karachi', 'Skidrow', 'subBase', 'Terminal', 'Highrise'] // Specific map names
+  },
+  gameMode: {
+    type: String,
+    enum: ['Hardpoint', 'Control', 'SND'] // Game mode types
+  },
   games: [gameSchema]
 });
 

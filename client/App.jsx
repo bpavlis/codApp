@@ -4,7 +4,6 @@ import { Header, ProtectedRoute } from './components';
 import { HomePage, AuthPage, Logout, PrivatePage, Control, Hardpoint, Search} from './pages/'
 // import StatForm from './pages/StatForm';
 import 'bootstrap/dist/css/bootstrap.min.css';
-
 export default function App(){
 
   return (

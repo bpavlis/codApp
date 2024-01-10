@@ -51,7 +51,7 @@ router.delete("/:id", async (req, res) => {
 
 module.exports = router;
 /*
-CHATGPT OUTPUT
+CHATGPT OUTPUT but it said what i have should work
 const express = require('express');
 const mongoose = require('mongoose');
 const Map = require('./models/map'); // Import your Map model
