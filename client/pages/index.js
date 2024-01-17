@@ -8,3 +8,6 @@ export { default as Hardpoint } from "./Hardpoint"
 export { default as Control } from "./Control"
 export { default as Search } from "./Search"
 
+export { default as InvasionHpForm } from "./FormInvasionHp"
+
+
