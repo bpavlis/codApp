@@ -20,7 +20,6 @@ const YourFormComponent = () => {
 
   const sendDataToServer = async () => {
     try {
-      // Replace the following with your actual server endpoint
       const response = await fetch('http://localhost:5173/api/invasionHp', {
         method: 'POST',
         headers: {
@@ -52,36 +51,37 @@ const YourFormComponent = () => {
   };
 
   return (
-    <form onSubmit={handleSubmit}>
-      <label>
-        Player Name:
-        <select name="playerName" value={formData.playerName} onChange={handleChange}>
-          <option value="">Select Player Name</option>
-          {allowedPlayerNames.map((name) => (
-            <option key={name} value={name}>
-              {name}
-            </option>
-          ))}
-        </select>
-      </label>
-      <br />
-      <label>
-        Kills:
-        <input type="number" name="kills" value={formData.kills} onChange={handleChange} />
-      </label>
-      <br />
-      <label>
-        Deaths:
-        <input type="number" name="deaths" value={formData.deaths} onChange={handleChange} />
-      </label>
-      <br />
-      <label>
-        Time in Match (minutes):
-        <input type="number" name="timeInMatch" value={formData.timeInMatch} onChange={handleChange} />
-      </label>
-      <br />
-      <button type="submit">Submit</button>
-    </form>
+      <form onSubmit={handleSubmit}>
+        <label>
+          Player Name:
+          <select name="playerName" value={formData.playerName} onChange={handleChange}>
+            <option value="">Select Player Name</option>
+            {allowedPlayerNames.map((name) => (
+              <option key={name} value={name}>
+                {name}
+              </option>
+            ))}
+          </select>
+        </label>
+        <br />
+        <label>
+          Kills:
+          <input type="number" name="kills" value={formData.kills} onChange={handleChange} />
+        </label>
+        <br />
+        <label>
+          Deaths:
+          <input type="number" name="deaths" value={formData.deaths} onChange={handleChange} />
+        </label>
+        <br />
+        <label>
+          Time in Point:
+          <input type="number" name="timeInMatch" value={formData.timeInMatch} onChange={handleChange} />
+        </label>
+        <br />
+        <button type="submit">Submit</button>
+      </form>
+
   );
 };
 
