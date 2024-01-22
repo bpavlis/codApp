@@ -10,6 +10,8 @@ import terminalHP from '../assets/terminalHP.png';
 
 export default function Hardpoint() {
   const [invasionHp, setInvasionHp] = useState([]);
+  const [karachiHp, setKarachiHp] = useState([]);
+
 
   useEffect(() => {
     fetch("/api/invasionHp", {
@@ -28,6 +30,26 @@ export default function Hardpoint() {
       .catch((error) => console.log(error));
   }, []);
 
+  useEffect(() => {
+    fetch("/api/karachiHp", {
+      method: "GET"
+    })
+      .then((response) => response.json())
+      .then((data) => {
+        if (Array.isArray(data)) {
+          setKarachiHp(data);
+        } else if (data && data.result === 'success' && Array.isArray(data.payload)) {
+          setKarachiHp(data.payload);
+        } else {
+          console.error("Invalid data format received from the API");
+        }
+      })
+      .catch((error) => console.log(error));
+  }, []);
+
+
+
+  // DaBears------------------------------------------
   function getDaBears5422DataAverages(data) {
     // Filter the data for Da_Bears5422
     const daBearsData = data.filter(game => game.playerName === 'Da_Bears5422');
@@ -53,13 +75,22 @@ export default function Hardpoint() {
       }; // If no data found for Da_Bears5422
     }
   }
-  const averagesDaBears5422 = getDaBears5422DataAverages(invasionHp);
-  // Calculate K/D ratio rounded to two decimal places
-  const kdRatioDaBears5422 = (averagesDaBears5422.averageKills / averagesDaBears5422.averageDeaths).toFixed(2);
-  const killsDaBears5422 = (averagesDaBears5422.averageKills).toFixed(2);
-  const deathsDaBears5422 = (averagesDaBears5422.averageDeaths).toFixed(2);
-  const timeDaBears5422 = (averagesDaBears5422.averageTimeInMatch).toFixed(2);
+  const invasionAveragesDaBears5422 = getDaBears5422DataAverages(invasionHp);
+  const karachiAveragesDaBears5422 = getDaBears5422DataAverages(karachiHp);
+  // Invasion
+  const invasionKdRatioDaBears5422 = (invasionAveragesDaBears5422.averageKills / invasionAveragesDaBears5422.averageDeaths).toFixed(2);
+  const invasionKillsDaBears5422 = (invasionAveragesDaBears5422.averageKills).toFixed(2);
+  const invasionDeathsDaBears5422 = (invasionAveragesDaBears5422.averageDeaths).toFixed(2);
+  const invasionTimeDaBears5422 = (invasionAveragesDaBears5422.averageTimeInMatch).toFixed(2);
+  // Karachi
+  const karachiKdRatioDaBears5422 = (karachiAveragesDaBears5422.averageKills / karachiAveragesDaBears5422.averageDeaths).toFixed(2);
+  const karachiKillsDaBears5422 = (karachiAveragesDaBears5422.averageKills).toFixed(2);
+  const karachiDeathsDaBears5422 = (karachiAveragesDaBears5422.averageDeaths).toFixed(2);
+  const karachiTimeDaBears5422 = (karachiAveragesDaBears5422.averageTimeInMatch).toFixed(2);
 
+
+
+  // HoneyB------------------------------------------
   function getHoneyBDataAverages(data) {
     // Filter the data for Da_Bears5422
     const honeyBData = data.filter(game => game.playerName === 'HoneyB');
@@ -82,16 +113,25 @@ export default function Hardpoint() {
         averageKills: 0,
         averageDeaths: 0,
         averageTimeInMatch: 0,
-      }; // If no data found for Da_Bears5422
+      };
     }
   }
-  const averagesHoneyB = getHoneyBDataAverages(invasionHp);
-  // Calculate K/D ratio rounded to two decimal places
-  const kdRatioHoneyB = (averagesHoneyB.averageKills / averagesHoneyB.averageDeaths).toFixed(2);
-  const killsHoneyB = (averagesHoneyB.averageKills).toFixed(2);
-  const deathsHoneyB = (averagesHoneyB.averageDeaths).toFixed(2);
-  const timeHoneyB = (averagesHoneyB.averageTimeInMatch).toFixed(2);
+  const invasionAveragesHoneyB = getHoneyBDataAverages(invasionHp);
+  const karachiAveragesHoneyB = getHoneyBDataAverages(karachiHp);
+  // Invasion
+  const invasionKdRatioHoneyB = (invasionAveragesHoneyB.averageKills / invasionAveragesHoneyB.averageDeaths).toFixed(2);
+  const invasionKillsHoneyB = (invasionAveragesHoneyB.averageKills).toFixed(2);
+  const invasionDeathsHoneyB = (invasionAveragesHoneyB.averageDeaths).toFixed(2);
+  const invasionTimeHoneyB = (invasionAveragesHoneyB.averageTimeInMatch).toFixed(2);
+  // Karachi
+  const karachiKdRatioHoneyB = (karachiAveragesHoneyB.averageKills / karachiAveragesHoneyB.averageDeaths).toFixed(2);
+  const karachiKillsHoneyB = (karachiAveragesHoneyB.averageKills).toFixed(2);
+  const karachiDeathsHoneyB = (karachiAveragesHoneyB.averageDeaths).toFixed(2);
+  const karachiTimeHoneyB = (karachiAveragesHoneyB.averageTimeInMatch).toFixed(2);
 
+
+
+  // SD------------------------------------------
   function getSDDataAverages(data) {
     // Filter the data for Da_Bears5422
     const SDData = data.filter(game => game.playerName === 'SD');
@@ -114,16 +154,25 @@ export default function Hardpoint() {
         averageKills: 0,
         averageDeaths: 0,
         averageTimeInMatch: 0,
-      }; // If no data found for Da_Bears5422
+      };
     }
   }
-  const averagesSD = getSDDataAverages(invasionHp);
-  // Calculate K/D ratio rounded to two decimal places
-  const kdRatioSD = (averagesSD.averageKills / averagesSD.averageDeaths).toFixed(2);
-  const killsSD = (averagesSD.averageKills).toFixed(2);
-  const deathsSD = (averagesSD.averageDeaths).toFixed(2);
-  const timeSD = (averagesSD.averageTimeInMatch).toFixed(2);
+  const invasionAveragesSD = getSDDataAverages(invasionHp);
+  const karachiAveragesSD = getSDDataAverages(karachiHp);
+  // Invasion
+  const invasionKdRatioSD = (invasionAveragesSD.averageKills / invasionAveragesSD.averageDeaths).toFixed(2);
+  const invasionKillsSD = (invasionAveragesSD.averageKills).toFixed(2);
+  const invasionDeathsSD = (invasionAveragesSD.averageDeaths).toFixed(2);
+  const invasionTimeSD = (invasionAveragesSD.averageTimeInMatch).toFixed(2);
+  // Karachi
+  const karachiKdRatioSD = (karachiAveragesSD.averageKills / karachiAveragesSD.averageDeaths).toFixed(2);
+  const karachiKillsSD = (karachiAveragesSD.averageKills).toFixed(2);
+  const karachiDeathsSD = (karachiAveragesSD.averageDeaths).toFixed(2);
+  const karachiTimeSD = (karachiAveragesSD.averageTimeInMatch).toFixed(2);
 
+
+
+  // Jimmy------------------------------------------
   function getJimmyDataAverages(data) {
     // Filter the data for Da_Bears5422
     const JimmyData = data.filter(game => game.playerName === 'Jimmy');
@@ -146,15 +195,21 @@ export default function Hardpoint() {
         averageKills: 0,
         averageDeaths: 0,
         averageTimeInMatch: 0,
-      }; // If no data found for Da_Bears5422
+      };
     }
   }
-  const averagesJimmy = getJimmyDataAverages(invasionHp);
-  // Calculate K/D ratio rounded to two decimal places
-  const kdRatioJimmy = (averagesJimmy.averageKills / averagesJimmy.averageDeaths).toFixed(2);
-  const killsJimmy = (averagesJimmy.averageKills).toFixed(2);
-  const deathsJimmy = (averagesJimmy.averageDeaths).toFixed(2);
-  const timeJimmy = (averagesJimmy.averageTimeInMatch).toFixed(2);
+  const invasionAveragesJimmy = getJimmyDataAverages(invasionHp);
+  const karachiAveragesJimmy = getJimmyDataAverages(karachiHp);
+  // Invasion
+  const invasionKdRatioJimmy = (invasionAveragesJimmy.averageKills / invasionAveragesJimmy.averageDeaths).toFixed(2);
+  const invasionKillsJimmy = (invasionAveragesJimmy.averageKills).toFixed(2);
+  const invasionDeathsJimmy = (invasionAveragesJimmy.averageDeaths).toFixed(2);
+  const invasionTimeJimmy = (invasionAveragesJimmy.averageTimeInMatch).toFixed(2);
+  // Karachi
+  const karachiKdRatioJimmy = (karachiAveragesJimmy.averageKills / karachiAveragesJimmy.averageDeaths).toFixed(2);
+  const karachiKillsJimmy = (karachiAveragesJimmy.averageKills).toFixed(2);
+  const karachiDeathsJimmy = (karachiAveragesJimmy.averageDeaths).toFixed(2);
+  const karachiTimeJimmy = (karachiAveragesJimmy.averageTimeInMatch).toFixed(2);
 
   return (
     <>
@@ -174,31 +229,31 @@ export default function Hardpoint() {
           <tbody>
             <tr>
               <td>Da_Bears5422</td>
-              <td>{killsDaBears5422}</td>
-              <td>{deathsDaBears5422}</td>
-              <td>{kdRatioDaBears5422}</td>
-              <td>{timeDaBears5422}</td>
+              <td>{invasionKillsDaBears5422}</td>
+              <td>{invasionDeathsDaBears5422}</td>
+              <td>{invasionKdRatioDaBears5422}</td>
+              <td>{invasionTimeDaBears5422}</td>
             </tr>
             <tr>
               <td>HoneyB</td>
-              <td>{killsHoneyB}</td>
-              <td>{deathsHoneyB}</td>
-              <td>{kdRatioHoneyB}</td>
-              <td>{timeHoneyB}</td>
+              <td>{invasionKillsHoneyB}</td>
+              <td>{invasionDeathsHoneyB}</td>
+              <td>{invasionKdRatioHoneyB}</td>
+              <td>{invasionTimeHoneyB}</td>
             </tr>
             <tr>
               <td>Jimmy</td>
-              <td>{killsJimmy}</td>
-              <td>{deathsJimmy}</td>
-              <td>{kdRatioJimmy}</td>
-              <td>{timeJimmy}</td>
+              <td>{invasionKillsJimmy}</td>
+              <td>{invasionDeathsJimmy}</td>
+              <td>{invasionKdRatioJimmy}</td>
+              <td>{invasionTimeJimmy}</td>
             </tr>
             <tr>
               <td>SD</td>
-              <td>{killsSD}</td>
-              <td>{deathsSD}</td>
-              <td>{kdRatioSD}</td>
-              <td>{timeSD}</td>
+              <td>{invasionKillsSD}</td>
+              <td>{invasionDeathsSD}</td>
+              <td>{invasionKdRatioSD}</td>
+              <td>{invasionTimeSD}</td>
             </tr>
           </tbody>
         </Table>
@@ -218,31 +273,31 @@ export default function Hardpoint() {
           <tbody>
             <tr>
               <td>Da_Bears5422</td>
-              <td>#</td>
-              <td>#</td>
-              <td>#</td>
-              <td>#</td>
+              <td>{karachiKillsDaBears5422}</td>
+              <td>{karachiDeathsDaBears5422}</td>
+              <td>{karachiKdRatioDaBears5422}</td>
+              <td>{karachiTimeDaBears5422}</td>
             </tr>
             <tr>
               <td>HoneyB</td>
-              <td>#</td>
-              <td>#</td>
-              <td>#</td>
-              <td>#</td>
+              <td>{karachiKillsHoneyB}</td>
+              <td>{karachiDeathsHoneyB}</td>
+              <td>{karachiKdRatioHoneyB}</td>
+              <td>{karachiTimeHoneyB}</td>
             </tr>
             <tr>
               <td>Jimmy</td>
-              <td>#</td>
-              <td>#</td>
-              <td>#</td>
-              <td>#</td>
+              <td>{karachiKillsJimmy}</td>
+              <td>{karachiDeathsJimmy}</td>
+              <td>{karachiKdRatioJimmy}</td>
+              <td>{karachiTimeJimmy}</td>
             </tr>
             <tr>
               <td>SD</td>
-              <td>#</td>
-              <td>#</td>
-              <td>#</td>
-              <td>#</td>
+              <td>{karachiKillsSD}</td>
+              <td>{karachiDeathsSD}</td>
+              <td>{karachiKdRatioSD}</td>
+              <td>{karachiTimeSD}</td>
             </tr>
           </tbody>
         </Table>
@@ -387,7 +442,7 @@ export default function Hardpoint() {
         <Card.Img id="img2" variant="top" src={subBaseHP} />
         <Card.Img id="img2" variant="top" src={terminalHP} />
       </div>
-      <div id="wrapper">
+      {/* <div id="wrapper">
         <div className="box">
           {invasionHp.map((game, index) => (
             <Card key={game._id || index} >
@@ -402,7 +457,7 @@ export default function Hardpoint() {
             </Card>
           ))}
         </div>
-      </div>
+      </div> */}
     </>
   )
 }

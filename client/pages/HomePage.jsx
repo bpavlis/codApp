@@ -5,6 +5,8 @@ import controlImage from '../assets/control.webp'
 import { Card, Button, Table, Form } from 'react-bootstrap';
 import StatForm from './StatForm';
 import FormInvasionHp from './FormInvasionHp'
+import FormKarachiHp from './FormKarachiHp'
+
 
 
 export default function HomePage() {
@@ -120,6 +122,8 @@ export default function HomePage() {
       </Table>
       {/* <StatForm /> */}
       <FormInvasionHp />
+      <FormKarachiHp />
+
     </>
   )
 }
