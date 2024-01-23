@@ -138,7 +138,6 @@ export default function Hardpoint() {
   const subBaseAveragesDaBears5422 = getDaBears5422DataAverages(subBaseHp);
   const terminalAveragesDaBears5422 = getDaBears5422DataAverages(terminalHp);
 
-
   // Invasion
   const invasionKdRatioDaBears5422 = (invasionAveragesDaBears5422.averageKills / invasionAveragesDaBears5422.averageDeaths).toFixed(2);
   const invasionKillsDaBears5422 = (invasionAveragesDaBears5422.averageKills).toFixed(2);

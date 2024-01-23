@@ -9,6 +9,9 @@ const karachiHpRoutes = require('./karachiHp.routes');
 const skidrowHpRoutes = require('./skidrowHp.routes');
 const subBaseHpRoutes = require('./subBaseHp.routes');
 const terminalHpRoutes = require('./terminalHp.routes');
+const highriseCNTRoutes = require('./highriseCNT.routes');
+const invasionCNTRoutes = require('./invasionCNT.routes');
+const karachiCNTRoutes = require('./karachiCNT.routes');
 
 
 
@@ -17,11 +20,16 @@ router.use('/sample', sampleRoutes);
 router.use('/user', userRoutes);
 router.use('/stat', statRoutes);
 router.use('/playerSchema', playerSchemaRoutes);
+
 router.use('/invasionHp', invasionHpRoutes);
 router.use('/karachiHp', karachiHpRoutes);
 router.use('/skidrowHp', skidrowHpRoutes);
 router.use('/subBaseHp', subBaseHpRoutes);
 router.use('/terminalHp', terminalHpRoutes);
+
+router.use('/highriseCNT', highriseCNTRoutes);
+router.use('/invasionCNT', invasionCNTRoutes);
+router.use('/karachiCNT', karachiCNTRoutes);
 
 
 
