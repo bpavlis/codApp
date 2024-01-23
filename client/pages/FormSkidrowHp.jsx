@@ -52,9 +52,9 @@ const YourFormComponent = () => {
 
   return (
     <form onSubmit={handleSubmit}>
-      <label>
+      <label className='formInput'>
         Player Name:
-        <select name="playerName" value={formData.playerName} onChange={handleChange}>
+        <select name="playerName" value={formData.playerName} onChange={handleChange} className='formInput'>
           <option value="">Select Player Name</option>
           {allowedPlayerNames.map((name) => (
             <option key={name} value={name}>
@@ -63,23 +63,23 @@ const YourFormComponent = () => {
           ))}
         </select>
       </label>
-      <br />
+
       <label>
         Kills:
-        <input type="number" name="kills" value={formData.kills} onChange={handleChange} />
+        <input type="number" name="kills" value={formData.kills} onChange={handleChange} className='formInput' />
       </label>
-      <br />
+
       <label>
         Deaths:
-        <input type="number" name="deaths" value={formData.deaths} onChange={handleChange} />
+        <input type="number" name="deaths" value={formData.deaths} onChange={handleChange} className='formInput' />
       </label>
-      <br />
+
       <label>
         Time in Point:
-        <input type="number" name="timeInMatch" value={formData.timeInMatch} onChange={handleChange} />
+        <input type="number" name="timeInMatch" value={formData.timeInMatch} onChange={handleChange} className='formInput' />
       </label>
       <br />
-      <button type="submit">Submit</button>
+      <button type="submit" className='formInputButton'>Submit</button>
     </form>
 
   );

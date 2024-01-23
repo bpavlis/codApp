@@ -3,12 +3,6 @@ import hardpointImage from '../assets/hardpoint.webp'
 import searchImage from '../assets/search.webp'
 import controlImage from '../assets/control.webp'
 import { Card, Button, Table, Form } from 'react-bootstrap';
-import StatForm from './StatForm';
-import FormInvasionHp from './FormInvasionHp'
-import FormKarachiHp from './FormKarachiHp'
-import FormSkidrowHp from './FormSkidrowHp'
-import FormSubBaseHp from './FormSubBaseHp'
-import FormTerminalHp from './FormTerminalHp'
 
 
 
@@ -92,17 +86,6 @@ export default function HomePage() {
           </tr>
         </tbody>
       </Table>
-      {/* <StatForm /> */}
-      <FormInvasionHp />
-      <FormKarachiHp />
-      <FormSkidrowHp />
-      <FormSubBaseHp />
-      <FormTerminalHp />
-
-
-
-
-
     </>
   )
 }

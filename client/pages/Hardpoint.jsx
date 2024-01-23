@@ -8,6 +8,12 @@ import skidrowHP from '../assets/skidrowHP.png';
 import subBaseHP from '../assets/subBaseHP.png';
 import terminalHP from '../assets/terminalHP.png';
 
+import FormInvasionHp from './FormInvasionHp'
+import FormKarachiHp from './FormKarachiHp'
+import FormSkidrowHp from './FormSkidrowHp'
+import FormSubBaseHp from './FormSubBaseHp'
+import FormTerminalHp from './FormTerminalHp'
+
 export default function Hardpoint() {
   const [invasionHp, setInvasionHp] = useState([]);
   const [karachiHp, setKarachiHp] = useState([]);
@@ -384,6 +390,7 @@ export default function Hardpoint() {
             </tr>
           </tbody>
         </Table>
+        <FormInvasionHp />
       </div>
       <div>
         <h3 className="title">Karachi Stats:</h3>
@@ -428,6 +435,7 @@ export default function Hardpoint() {
             </tr>
           </tbody>
         </Table>
+        <FormKarachiHp />
       </div>
       <div>
         <h3 className="title">Skidrow Stats:</h3>
@@ -472,6 +480,7 @@ export default function Hardpoint() {
             </tr>
           </tbody>
         </Table>
+        <FormSkidrowHp />
       </div>
       <div>
         <h3 className="title">Sub Base Stats:</h3>
@@ -516,6 +525,7 @@ export default function Hardpoint() {
             </tr>
           </tbody>
         </Table>
+        <FormSubBaseHp />
       </div>
       <div>
         <h3 className="title">Terminal Stats:</h3>
@@ -560,6 +570,7 @@ export default function Hardpoint() {
             </tr>
           </tbody>
         </Table>
+        <FormTerminalHp />
       </div>
       <h1 className='title'>Rotations:</h1>
       <div id="cards-container">

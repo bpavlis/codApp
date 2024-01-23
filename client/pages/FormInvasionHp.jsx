@@ -51,36 +51,36 @@ const YourFormComponent = () => {
   };
 
   return (
-      <form onSubmit={handleSubmit}>
-        <label>
-          Player Name:
-          <select name="playerName" value={formData.playerName} onChange={handleChange}>
-            <option value="">Select Player Name</option>
-            {allowedPlayerNames.map((name) => (
-              <option key={name} value={name}>
-                {name}
-              </option>
-            ))}
-          </select>
-        </label>
-        <br />
-        <label>
-          Kills:
-          <input type="number" name="kills" value={formData.kills} onChange={handleChange} />
-        </label>
-        <br />
-        <label>
-          Deaths:
-          <input type="number" name="deaths" value={formData.deaths} onChange={handleChange} />
-        </label>
-        <br />
-        <label>
-          Time in Point:
-          <input type="number" name="timeInMatch" value={formData.timeInMatch} onChange={handleChange} />
-        </label>
-        <br />
-        <button type="submit">Submit</button>
-      </form>
+    <form onSubmit={handleSubmit}>
+      <label className='formInput'>
+        Player Name:
+        <select name="playerName" value={formData.playerName} onChange={handleChange} className='formInput'>
+          <option value="">Select Player Name</option>
+          {allowedPlayerNames.map((name) => (
+            <option key={name} value={name}>
+              {name}
+            </option>
+          ))}
+        </select>
+      </label>
+
+      <label>
+        Kills:
+        <input type="number" name="kills" value={formData.kills} onChange={handleChange} className='formInput' />
+      </label>
+
+      <label>
+        Deaths:
+        <input type="number" name="deaths" value={formData.deaths} onChange={handleChange} className='formInput' />
+      </label>
+
+      <label>
+        Time in Point:
+        <input type="number" name="timeInMatch" value={formData.timeInMatch} onChange={handleChange} className='formInput' />
+      </label>
+      <br />
+      <button type="submit" className='formInputButton'>Submit</button>
+    </form>
 
   );
 };
