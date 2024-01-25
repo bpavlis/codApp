@@ -2,7 +2,7 @@ const { Schema, model } = require('mongoose');
 
 const allowedPlayerNames = ['Da_Bears5422', 'Jimmy', 'SD', 'HoneyB'];
 
-const highriseSNDSchema = new Schema({
+const invasionSNDSchema = new Schema({
   playerName: {
     type: String,
     required: true,
@@ -26,5 +26,5 @@ const highriseSNDSchema = new Schema({
   }
 });
 
-const HighriseSND = model('HighriseSND', highriseSNDSchema);
-module.exports = HighriseSND;
+const InvasionSND = model('InvasionSND', invasionSNDSchema);
+module.exports = InvasionSND;

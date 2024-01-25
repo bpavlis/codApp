@@ -10,10 +10,15 @@ const SubBaseHp = require("./SubBaseHp")
 const TerminalHp = require("./TerminalHp")
 
 const HighriseSND = require("./HighriseSND")
+const InvasionSND = require("./InvasionSND")
+const KarachiSND = require("./KarachiSND")
+const SkidrowSND = require("./SkidrowSND")
+const TerminalSND = require("./TerminalSND")
+
 
 const HighriseCNT = require("./HighriseCNT")
 const InvasionCNT = require("./InvasionCNT")
 const KarachiCNT = require("./KarachiCNT")
 
 
-module.exports = { Sample, User, Stat, PlayerSchema, InvasionHp, KarachiHp, SkidrowHp, SubBaseHp, TerminalHp, HighriseSND, HighriseCNT, InvasionCNT, KarachiCNT };
+module.exports = { Sample, User, Stat, PlayerSchema, InvasionHp, KarachiHp, SkidrowHp, SubBaseHp, TerminalHp, HighriseCNT, InvasionCNT, KarachiCNT, HighriseSND, InvasionSND, KarachiSND, SkidrowSND, TerminalSND  };

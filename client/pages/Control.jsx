@@ -108,14 +108,14 @@ export default function Control() {
 
   // HoneyB------------------------------------------
   function getHoneyBDataAverages(data) {
-    const daBearsData = data.filter(game => game.playerName === 'HoneyB');
+    const honeyBData = data.filter(game => game.playerName === 'HoneyB');
 
     // Calculate the averages
-    if (daBearsData.length > 0) {
-      const totalKills = daBearsData.reduce((sum, game) => sum + game.kills, 0);
-      const totalDeaths = daBearsData.reduce((sum, game) => sum + game.deaths, 0);
-      const averageKills = totalKills / daBearsData.length;
-      const averageDeaths = totalDeaths / daBearsData.length;
+    if (honeyBData.length > 0) {
+      const totalKills = honeyBData.reduce((sum, game) => sum + game.kills, 0);
+      const totalDeaths = honeyBData.reduce((sum, game) => sum + game.deaths, 0);
+      const averageKills = totalKills / honeyBData.length;
+      const averageDeaths = totalDeaths / honeyBData.length;
       return {
         averageKills,
         averageDeaths,
@@ -148,14 +148,14 @@ export default function Control() {
 
   // SD------------------------------------------
   function getSDDataAverages(data) {
-    const daBearsData = data.filter(game => game.playerName === 'SD');
+    const sDData = data.filter(game => game.playerName === 'SD');
 
     // Calculate the averages
-    if (daBearsData.length > 0) {
-      const totalKills = daBearsData.reduce((sum, game) => sum + game.kills, 0);
-      const totalDeaths = daBearsData.reduce((sum, game) => sum + game.deaths, 0);
-      const averageKills = totalKills / daBearsData.length;
-      const averageDeaths = totalDeaths / daBearsData.length;
+    if (sDData.length > 0) {
+      const totalKills = sDData.reduce((sum, game) => sum + game.kills, 0);
+      const totalDeaths = sDData.reduce((sum, game) => sum + game.deaths, 0);
+      const averageKills = totalKills / sDData.length;
+      const averageDeaths = totalDeaths / sDData.length;
       return {
         averageKills,
         averageDeaths,
@@ -188,14 +188,14 @@ export default function Control() {
 
   // Jimmy------------------------------------------
   function getJimmyDataAverages(data) {
-    const daBearsData = data.filter(game => game.playerName === 'Jimmy');
+    const jimmyData = data.filter(game => game.playerName === 'Jimmy');
 
     // Calculate the averages
-    if (daBearsData.length > 0) {
-      const totalKills = daBearsData.reduce((sum, game) => sum + game.kills, 0);
-      const totalDeaths = daBearsData.reduce((sum, game) => sum + game.deaths, 0);
-      const averageKills = totalKills / daBearsData.length;
-      const averageDeaths = totalDeaths / daBearsData.length;
+    if (jimmyData.length > 0) {
+      const totalKills = jimmyData.reduce((sum, game) => sum + game.kills, 0);
+      const totalDeaths = jimmyData.reduce((sum, game) => sum + game.deaths, 0);
+      const averageKills = totalKills / jimmyData.length;
+      const averageDeaths = totalDeaths / jimmyData.length;
       return {
         averageKills,
         averageDeaths,

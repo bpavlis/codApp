@@ -2,11 +2,11 @@ import React, { useState, useEffect } from "react";
 import { Table, Card } from 'react-bootstrap';
 
 import '../styling/Mode.css';
-import invasionHP from '../assets/invasionHP.png';
-import karachiHP from '../assets/karachiHP.png';
-import skidrowHP from '../assets/skidrowHP.png';
-import subBaseHP from '../assets/subBaseHP.png';
-import terminalHP from '../assets/terminalHP.png';
+import invasionHPImg from '../assets/invasionHP.png';
+import karachiHPImg from '../assets/karachiHP.png';
+import skidrowHPImg from '../assets/skidrowHP.png';
+import subBaseHPImg from '../assets/subBaseHP.png';
+import terminalHPImg from '../assets/terminalHP.png';
 
 import FormInvasionHp from './FormInvasionHp'
 import FormKarachiHp from './FormKarachiHp'
@@ -168,16 +168,16 @@ export default function Hardpoint() {
   // HoneyB------------------------------------------
   function getHoneyBDataAverages(data) {
     // Filter the data for Da_Bears5422
-    const honeyBData = data.filter(game => game.playerName === 'HoneyB');
+    const HoneyBData = data.filter(game => game.playerName === 'HoneyB');
 
     // Calculate the averages
-    if (honeyBData.length > 0) {
-      const totalKills = honeyBData.reduce((sum, game) => sum + game.kills, 0);
-      const totalDeaths = honeyBData.reduce((sum, game) => sum + game.deaths, 0);
-      const totalTimeInMatch = honeyBData.reduce((sum, game) => sum + game.timeInMatch, 0);
-      const averageKills = totalKills / honeyBData.length;
-      const averageDeaths = totalDeaths / honeyBData.length;
-      const averageTimeInMatch = totalTimeInMatch / honeyBData.length;
+    if (HoneyBData.length > 0) {
+      const totalKills = HoneyBData.reduce((sum, game) => sum + game.kills, 0);
+      const totalDeaths = HoneyBData.reduce((sum, game) => sum + game.deaths, 0);
+      const totalTimeInMatch = HoneyBData.reduce((sum, game) => sum + game.timeInMatch, 0);
+      const averageKills = totalKills / HoneyBData.length;
+      const averageDeaths = totalDeaths / HoneyBData.length;
+      const averageTimeInMatch = totalTimeInMatch / HoneyBData.length;
       return {
         averageKills,
         averageDeaths,
@@ -573,11 +573,11 @@ export default function Hardpoint() {
       </div>
       <h1 className='title'>Rotations:</h1>
       <div id="cards-container">
-        <Card.Img id="img2" variant="top" src={invasionHP} />
-        <Card.Img id="img2" variant="top" src={karachiHP} />
-        <Card.Img id="img2" variant="top" src={skidrowHP} />
-        <Card.Img id="img2" variant="top" src={subBaseHP} />
-        <Card.Img id="img2" variant="top" src={terminalHP} />
+        <Card.Img id="img2" variant="top" src={invasionHPImg} />
+        <Card.Img id="img2" variant="top" src={karachiHPImg} />
+        <Card.Img id="img2" variant="top" src={skidrowHPImg} />
+        <Card.Img id="img2" variant="top" src={subBaseHPImg} />
+        <Card.Img id="img2" variant="top" src={terminalHPImg} />
       </div>
       {/* <div id="wrapper">
         <div className="box">
