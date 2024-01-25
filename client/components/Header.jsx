@@ -18,11 +18,11 @@ export default function Header() {
             <Nav.Link href="/search">Search & Destroy</Nav.Link>
             <Nav.Link href="/control">Control</Nav.Link>
 
-            { user?._id !== undefined ? (
+            {/* { user?._id !== undefined ? (
               <Nav.Link href="/logout">Logout</Nav.Link>
             ):(
               <Nav.Link href="/auth">Login</Nav.Link>
-            )}
+            )} */}
             
           </Nav>
         </Navbar.Collapse>
