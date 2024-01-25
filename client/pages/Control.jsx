@@ -225,9 +225,68 @@ export default function Control() {
   const karachiDeathsJimmy = (karachiAveragesJimmy.averageDeaths).toFixed(2);
 
 
+
+  // Function to calculate averages across all maps
+  function calculateAverages(data) {
+    const allData = [].concat(...data); // Flatten the data array
+
+    const daBearsAvg = getDaBears5422DataAverages(allData);
+    const honeyBAvg = getHoneyBDataAverages(allData);
+    const sdAvg = getSDDataAverages(allData);
+    const jimmyAvg = getJimmyDataAverages(allData);
+
+    return {
+      daBearsAvg,
+      honeyBAvg,
+      sdAvg,
+      jimmyAvg,
+    };
+  }
+
+  const allAverages = calculateAverages([highriseCNT, invasionCNT, karachiCNT]);
+
   return (
     <>
       <h1>Control Stats:</h1>
+      <div>
+        <h3 className="title">Averages Across All Maps:</h3>
+        <Table responsive="sm">
+          <thead>
+            <tr>
+              <th>Username</th>
+              <th>Avg Kills</th>
+              <th>Avg Deaths</th>
+              <th>K/D</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Da_Bears5422</td>
+              <td>{allAverages.daBearsAvg.averageKills.toFixed(2)}</td>
+              <td>{allAverages.daBearsAvg.averageDeaths.toFixed(2)}</td>
+              <td>{(allAverages.daBearsAvg.averageKills / allAverages.daBearsAvg.averageDeaths).toFixed(2)}</td>
+            </tr>
+            <tr>
+              <td>HoneyB</td>
+              <td>{allAverages.honeyBAvg.averageKills.toFixed(2)}</td>
+              <td>{allAverages.honeyBAvg.averageDeaths.toFixed(2)}</td>
+              <td>{(allAverages.honeyBAvg.averageKills / allAverages.honeyBAvg.averageDeaths).toFixed(2)}</td>
+            </tr>
+            <tr>
+              <td>Jimmy</td>
+              <td>{allAverages.jimmyAvg.averageKills.toFixed(2)}</td>
+              <td>{allAverages.jimmyAvg.averageDeaths.toFixed(2)}</td>
+              <td>{(allAverages.jimmyAvg.averageKills / allAverages.jimmyAvg.averageDeaths).toFixed(2)}</td>
+            </tr>
+            <tr>
+              <td>SD</td>
+              <td>{allAverages.sdAvg.averageKills.toFixed(2)}</td>
+              <td>{allAverages.sdAvg.averageDeaths.toFixed(2)}</td>
+              <td>{(allAverages.sdAvg.averageKills / allAverages.sdAvg.averageDeaths).toFixed(2)}</td>
+            </tr>
+          </tbody>
+        </Table>
+      </div>
       <div>
         <h3 className="title">Highrise Stats:</h3>
         <Table responsive="sm">

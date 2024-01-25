@@ -343,9 +343,74 @@ export default function Hardpoint() {
   const terminalDeathsJimmy = (terminalAveragesJimmy.averageDeaths).toFixed(2);
   const terminalTimeJimmy = (terminalAveragesJimmy.averageTimeInMatch).toFixed(2);
 
+
+
+  // Function to calculate averages across all maps
+  function calculateAverages(data) {
+    const allData = [].concat(...data); // Flatten the data array
+
+    const daBearsAvg = getDaBears5422DataAverages(allData);
+    const honeyBAvg = getHoneyBDataAverages(allData);
+    const sdAvg = getSDDataAverages(allData);
+    const jimmyAvg = getJimmyDataAverages(allData);
+
+    return {
+      daBearsAvg,
+      honeyBAvg,
+      sdAvg,
+      jimmyAvg,
+    };
+  }
+
+  const allAverages = calculateAverages([skidrowHp, invasionHp, karachiHp, terminalHp, subBaseHp]);
+
   return (
     <>
       <h1>Hardpoint Stats:</h1>
+      <div>
+        <h3 className="title">Averages Across All Maps:</h3>
+        <Table responsive="sm">
+          <thead>
+            <tr>
+              <th>Username</th>
+              <th>Avg Kills</th>
+              <th>Avg Deaths</th>
+              <th>K/D</th>
+              <th>Avg Time</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Da_Bears5422</td>
+              <td>{allAverages.daBearsAvg.averageKills.toFixed(2)}</td>
+              <td>{allAverages.daBearsAvg.averageDeaths.toFixed(2)}</td>
+              <td>{(allAverages.daBearsAvg.averageKills / allAverages.daBearsAvg.averageDeaths).toFixed(2)}</td>
+              <td>{allAverages.daBearsAvg.averageTimeInMatch.toFixed(2)}</td>
+            </tr>
+            <tr>
+              <td>HoneyB</td>
+              <td>{allAverages.honeyBAvg.averageKills.toFixed(2)}</td>
+              <td>{allAverages.honeyBAvg.averageDeaths.toFixed(2)}</td>
+              <td>{(allAverages.honeyBAvg.averageKills / allAverages.honeyBAvg.averageDeaths).toFixed(2)}</td>
+              <td>{allAverages.honeyBAvg.averageTimeInMatch.toFixed(2)}</td>
+            </tr>
+            <tr>
+              <td>Jimmy</td>
+              <td>{allAverages.jimmyAvg.averageKills.toFixed(2)}</td>
+              <td>{allAverages.jimmyAvg.averageDeaths.toFixed(2)}</td>
+              <td>{(allAverages.jimmyAvg.averageKills / allAverages.jimmyAvg.averageDeaths).toFixed(2)}</td>
+              <td>{allAverages.jimmyAvg.averageTimeInMatch.toFixed(2)}</td>
+            </tr>
+            <tr>
+              <td>SD</td>
+              <td>{allAverages.sdAvg.averageKills.toFixed(2)}</td>
+              <td>{allAverages.sdAvg.averageDeaths.toFixed(2)}</td>
+              <td>{(allAverages.sdAvg.averageKills / allAverages.sdAvg.averageDeaths).toFixed(2)}</td>
+              <td>{allAverages.sdAvg.averageTimeInMatch.toFixed(2)}</td>
+            </tr>
+          </tbody>
+        </Table>
+      </div>
       <div>
         <h3 className="title">Invasion Stats:</h3>
         <Table responsive="sm">
@@ -579,22 +644,6 @@ export default function Hardpoint() {
         <Card.Img id="img2" variant="top" src={subBaseHPImg} />
         <Card.Img id="img2" variant="top" src={terminalHPImg} />
       </div>
-      {/* <div id="wrapper">
-        <div className="box">
-          {invasionHp.map((game, index) => (
-            <Card key={game._id || index} >
-              <Card.Body>
-                <Card.Title>{game.playerName}</Card.Title><br />
-                <Card.Text>
-                  Kills: {game.kills}<br />
-                  Deaths: {game.deaths}<br />
-                  Avg Time: {game.timeInMatch}
-                </Card.Text>
-              </Card.Body>
-            </Card>
-          ))}
-        </div>
-      </div> */}
     </>
   )
 }

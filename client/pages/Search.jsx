@@ -235,8 +235,8 @@ export default function Search() {
   const terminalKdRatioHoneyB = (terminalAveragesHoneyB.averageKills / terminalAveragesHoneyB.averageDeaths).toFixed(2);
   const terminalKillsHoneyB = (terminalAveragesHoneyB.averageKills).toFixed(2);
   const terminalDeathsHoneyB = (terminalAveragesHoneyB.averageDeaths).toFixed(2);
-  const terminalPlantsHoneyB = (highriseAveragesHoneyB.averagePlants).toFixed(2);
-  const terminalDefuseHoneyB = (highriseAveragesHoneyB.averageDefuse).toFixed(2);
+  const terminalPlantsHoneyB = (terminalAveragesHoneyB.averagePlants).toFixed(2);
+  const terminalDefuseHoneyB = (terminalAveragesHoneyB.averageDefuse).toFixed(2);
 
 
 
@@ -303,8 +303,8 @@ export default function Search() {
   const terminalKdRatioSD = (terminalAveragesSD.averageKills / terminalAveragesSD.averageDeaths).toFixed(2);
   const terminalKillsSD = (terminalAveragesSD.averageKills).toFixed(2);
   const terminalDeathsSD = (terminalAveragesSD.averageDeaths).toFixed(2);
-  const terminalPlantsSD = (highriseAveragesSD.averagePlants).toFixed(2);
-  const terminalDefuseSD = (highriseAveragesSD.averageDefuse).toFixed(2);
+  const terminalPlantsSD = (terminalAveragesSD.averagePlants).toFixed(2);
+  const terminalDefuseSD = (terminalAveragesSD.averageDefuse).toFixed(2);
 
 
 
@@ -371,11 +371,81 @@ export default function Search() {
   const terminalKdRatioJimmy = (terminalAveragesJimmy.averageKills / terminalAveragesJimmy.averageDeaths).toFixed(2);
   const terminalKillsJimmy = (terminalAveragesJimmy.averageKills).toFixed(2);
   const terminalDeathsJimmy = (terminalAveragesJimmy.averageDeaths).toFixed(2);
-  const terminalPlantsJimmy = (highriseAveragesJimmy.averagePlants).toFixed(2);
-  const terminalDefuseJimmy = (highriseAveragesJimmy.averageDefuse).toFixed(2);
+  const terminalPlantsJimmy = (terminalAveragesJimmy.averagePlants).toFixed(2);
+  const terminalDefuseJimmy = (terminalAveragesJimmy.averageDefuse).toFixed(2);
+
+
+
+  // Function to calculate averages across all maps
+  function calculateAverages(data) {
+    const allData = [].concat(...data); // Flatten the data array
+
+    const daBearsAvg = getDaBears5422DataAverages(allData);
+    const honeyBAvg = getHoneyBDataAverages(allData);
+    const sdAvg = getSDDataAverages(allData);
+    const jimmyAvg = getJimmyDataAverages(allData);
+
+    return {
+      daBearsAvg,
+      honeyBAvg,
+      sdAvg,
+      jimmyAvg,
+    };
+  }
+
+  const allAverages = calculateAverages([highriseSND, invasionSND, karachiSND, skidrowSND, terminalSND]);
   return (
     <>
       <h1>Search & Destroy Stats:</h1>
+      <div>
+        <h3 className="title">Averages Across All Maps:</h3>
+        <Table responsive="sm">
+          <thead>
+            <tr>
+              <th>Username</th>
+              <th>Avg Kills</th>
+              <th>Avg Deaths</th>
+              <th>K/D</th>
+              <th>Avg Plants</th>
+              <th>Avg Defuse</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Da_Bears5422</td>
+              <td>{allAverages.daBearsAvg.averageKills.toFixed(2)}</td>
+              <td>{allAverages.daBearsAvg.averageDeaths.toFixed(2)}</td>
+              <td>{(allAverages.daBearsAvg.averageKills / allAverages.daBearsAvg.averageDeaths).toFixed(2)}</td>
+              <td>{allAverages.daBearsAvg.averagePlants.toFixed(2)}</td>
+              <td>{allAverages.daBearsAvg.averageDefuse.toFixed(2)}</td>
+            </tr>
+            <tr>
+              <td>HoneyB</td>
+              <td>{allAverages.honeyBAvg.averageKills.toFixed(2)}</td>
+              <td>{allAverages.honeyBAvg.averageDeaths.toFixed(2)}</td>
+              <td>{(allAverages.honeyBAvg.averageKills / allAverages.honeyBAvg.averageDeaths).toFixed(2)}</td>
+              <td>{allAverages.honeyBAvg.averagePlants.toFixed(2)}</td>
+              <td>{allAverages.honeyBAvg.averageDefuse.toFixed(2)}</td>
+            </tr>
+            <tr>
+              <td>Jimmy</td>
+              <td>{allAverages.jimmyAvg.averageKills.toFixed(2)}</td>
+              <td>{allAverages.jimmyAvg.averageDeaths.toFixed(2)}</td>
+              <td>{(allAverages.jimmyAvg.averageKills / allAverages.jimmyAvg.averageDeaths).toFixed(2)}</td>
+              <td>{allAverages.jimmyAvg.averagePlants.toFixed(2)}</td>
+              <td>{allAverages.jimmyAvg.averageDefuse.toFixed(2)}</td>
+            </tr>
+            <tr>
+              <td>SD</td>
+              <td>{allAverages.sdAvg.averageKills.toFixed(2)}</td>
+              <td>{allAverages.sdAvg.averageDeaths.toFixed(2)}</td>
+              <td>{(allAverages.sdAvg.averageKills / allAverages.sdAvg.averageDeaths).toFixed(2)}</td>
+              <td>{allAverages.sdAvg.averagePlants.toFixed(2)}</td>
+              <td>{allAverages.sdAvg.averageDefuse.toFixed(2)}</td>
+            </tr>
+          </tbody>
+        </Table>
+      </div>
       <div>
         <h3 className="title">Highrise Stats:</h3>
         <Table responsive="sm">

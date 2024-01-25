@@ -7,7 +7,6 @@ const YourFormComponent = () => {
     playerName: '',
     kills: 0,
     deaths: 0,
-    timeInMatch: 0,
   });
 
   const handleChange = (e) => {
@@ -35,7 +34,6 @@ const YourFormComponent = () => {
           playerName: '',
           kills: 0,
           deaths: 0,
-          timeInMatch: 0,
         });
       } else {
         console.error('Failed to submit form data');
@@ -72,11 +70,6 @@ const YourFormComponent = () => {
       <label>
         Deaths:
         <input type="number" name="deaths" value={formData.deaths} onChange={handleChange} className='formInput' />
-      </label>
-
-      <label>
-        Time in Point:
-        <input type="number" name="timeInMatch" value={formData.timeInMatch} onChange={handleChange} className='formInput' />
       </label>
       <br />
       <button type="submit" className='formInputButton'>Submit</button>
