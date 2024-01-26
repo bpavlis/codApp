@@ -1,4 +1,4 @@
-const Sample = require('./Sample');
+
 const User = require('./User');
 const Stat = require('./Stat');
 const PlayerSchema = require('./PlayerSchema');
@@ -21,4 +21,4 @@ const InvasionCNT = require("./InvasionCNT")
 const KarachiCNT = require("./KarachiCNT")
 
 
-module.exports = { Sample, User, Stat, PlayerSchema, InvasionHp, KarachiHp, SkidrowHp, SubBaseHp, TerminalHp, HighriseCNT, InvasionCNT, KarachiCNT, HighriseSND, InvasionSND, KarachiSND, SkidrowSND, TerminalSND  };
+module.exports = { User, Stat, PlayerSchema, InvasionHp, KarachiHp, SkidrowHp, SubBaseHp, TerminalHp, HighriseCNT, InvasionCNT, KarachiCNT, HighriseSND, InvasionSND, KarachiSND, SkidrowSND, TerminalSND  };

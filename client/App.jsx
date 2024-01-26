@@ -1,7 +1,7 @@
 import { BrowserRouter, Routes, Route } from 'react-router-dom'
 import AppProvider from './utils/AppProvider';
 import { Header, ProtectedRoute } from './components';
-import { HomePage, AuthPage, Logout, PrivatePage, Control, Hardpoint, Search} from './pages/'
+import { HomePage, AuthPage, Logout, PrivatePage, Control, Hardpoint, Search } from './pages/'
 import 'bootstrap/dist/css/bootstrap.min.css';
 export default function App(){
 
@@ -15,7 +15,7 @@ export default function App(){
             <Route path="/control" element={<Control />} />
             <Route path="/hardpoint" element={<Hardpoint />} />
             <Route path="/search" element={<Search />} />
-            <Route path="/auth" element={<AuthPage />} />
+            {/* <Route path="/auth" element={<AuthPage />} /> */}
 
 
             {/* <Route path="/private" element={

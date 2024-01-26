@@ -1,6 +1,4 @@
 const router = require('express').Router();
-
-const sampleRoutes = require('./sample.routes');
 const userRoutes = require('./user.routes');
 const statRoutes = require('./stat.routes');
 const playerSchemaRoutes = require('./playerSchema.routes');
@@ -21,10 +19,6 @@ const karachiSNDRoutes = require('./karachiSND.routes');
 const skidrowSNDRoutes = require('./skidrowSND.routes');
 const terminalSNDRoutes = require('./terminalSND.routes');
 
-
-
-
-router.use('/sample', sampleRoutes);
 router.use('/user', userRoutes);
 router.use('/stat', statRoutes);
 router.use('/playerSchema', playerSchemaRoutes);

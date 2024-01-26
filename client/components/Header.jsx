@@ -17,6 +17,7 @@ export default function Header() {
             <Nav.Link href="/hardpoint">Hardpoint</Nav.Link>
             <Nav.Link href="/search">Search & Destroy</Nav.Link>
             <Nav.Link href="/control">Control</Nav.Link>
+            <Nav.Link href="https://www.youtube.com/channel/UCuu2Wct3qvJmOJRijb_3rCA" target="_blank">YouTube</Nav.Link>
 
             {/* { user?._id !== undefined ? (
               <Nav.Link href="/logout">Logout</Nav.Link>
