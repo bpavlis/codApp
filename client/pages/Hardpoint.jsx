@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { Table, Card } from 'react-bootstrap';
 
-import '../styling/Mode.css';
+// import '../styling/Mode.css';
 import invasionHPImg from '../assets/invasionHP.png';
 import karachiHPImg from '../assets/karachiHP.png';
 import skidrowHPImg from '../assets/skidrowHP.png';

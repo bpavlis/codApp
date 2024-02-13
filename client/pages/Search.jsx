@@ -1,4 +1,4 @@
-import '../styling/Mode.css'
+// import '../styling/Mode.css'
 import React, { useState, useEffect } from "react";
 import { Table, Card } from 'react-bootstrap';
 import invasionSNDImg from '../assets/invasionSND.png'
