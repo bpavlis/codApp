@@ -7,7 +7,7 @@ This project is currently meant for use on your own local machine as it does not
 Below are screenshots of the application running:
 
 ![screenshot 1 of homepage](./client/assets/codAppScreenshot1.png)
-![screenshot 1 of homepage](./client/assets/codAppScreenshot2.png)
+![screenshot 2 of homepage](./client/assets/codAppScreenshot2.png)
 
 ## Credits
 This project was done in its entirety by [Ben Pavlis](https://github.com/bpavlis)
